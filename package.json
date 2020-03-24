@@ -1,0 +1,23 @@
+{
+  "name": "fcc-advanced-node-and-express",
+  "version": "1.0.0",
+  "description": "https://www.freecodecamp.org/learn/information-security-and-quality-assurance/advanced-node-and-express/",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slesarevns/ffc-advanced-node-and-express.git"
+  },
+  "keywords": [
+    "node.js",
+    "express"
+  ],
+  "author": "Sergei Slesarev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slesarevns/ffc-advanced-node-and-express/issues"
+  },
+  "homepage": "https://github.com/slesarevns/ffc-advanced-node-and-express#readme"
+}
