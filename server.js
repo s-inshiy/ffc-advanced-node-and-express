@@ -13,6 +13,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const http = require("http").Server(app);
 const sessionStore = new session.MemoryStore();
+const io = require('socket.io')(http);
 dotenv.config();
 
 fccTesting(app); //For FCC testing purposes
@@ -33,7 +34,7 @@ app.use(
   })
 );
 
-mongo.connect(process.env.DATABASE, (err, db) => {
+mongo.connect(process.env.DATABASE, { useUnifiedTopology: true }, (err, db) => {
   if (err) console.log("Database error: " + err);
 
   auth(app, db);
@@ -42,6 +43,10 @@ mongo.connect(process.env.DATABASE, (err, db) => {
   http.listen(process.env.PORT || 3000);
 
   //start socket.io code
+
+  io.on('connection', socket => {
+    console.log('A user has connected');
+  });
 
   //end socket.io code
 });
