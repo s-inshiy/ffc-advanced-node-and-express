@@ -3,6 +3,7 @@
 const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
 const fccTesting = require("./freeCodeCamp/fcctesting.js");
 const auth = require("./app/auth.js");
 const routes = require("./app/routes.js");
@@ -12,6 +13,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const http = require("http").Server(app);
 const sessionStore = new session.MemoryStore();
+dotenv.config();
 
 fccTesting(app); //For FCC testing purposes
 
