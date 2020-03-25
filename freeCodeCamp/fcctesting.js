@@ -25,13 +25,6 @@
  *
  */
 
-/*
- *  THIS FILE IS FOR freeCodeCamp TO BE ABLE TO TEST YOUR CODE PROPERLY
- *
- *  ~DO NOT EDIT!~
- *
- */
-
 "use strict";
 
 const fs = require("fs");

@@ -13,7 +13,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const http = require("http").Server(app);
 const sessionStore = new session.MemoryStore();
-const io = require('socket.io')(http);
+const io = require("socket.io")(http);
 dotenv.config();
 
 fccTesting(app); //For FCC testing purposes
@@ -44,8 +44,12 @@ mongo.connect(process.env.DATABASE, (err, db) => {
 
   //start socket.io code
 
-  io.on('connection', socket => {
-    console.log('A user has connected');
+  let currentUsers = 0;
+
+  io.on("connection", socket => {
+    console.log("A user has connected");
+    ++currentUsers;
+    io.emit("user count", currentUsers);
   });
 
   //end socket.io code
