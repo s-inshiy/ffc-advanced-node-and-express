@@ -1,2 +1,15 @@
 # dependencies
 node_modules/
+package-lock.json
+
+# IDE
+/.idea
+/.awcache
+/.vscode
+*.code-workspace
+
+# misc
+.DS_Store
+npm-debug.log
+yarn-error.log
+/**/npm-debug.log
