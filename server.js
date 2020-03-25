@@ -11,9 +11,9 @@ const mongo = require("mongodb").MongoClient;
 const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const app = express();
-dotenv.config();
 const http = require("http").Server(app);
 const sessionStore = new session.MemoryStore();
+dotenv.config();
 
 fccTesting(app); //For FCC testing purposes
 
