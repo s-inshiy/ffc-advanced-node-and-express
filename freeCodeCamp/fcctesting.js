@@ -38,6 +38,8 @@ const fs = require("fs");
 const cors = require("cors");
 
 module.exports = function(app) {
+  app.use(cors());
+
   app.use(function(req, res, next) {
     var allowedOrigins = [
       "https://pricey-hugger.gomix.me",
