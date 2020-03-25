@@ -4,11 +4,22 @@
   "description": "https://www.freecodecamp.org/learn/information-security-and-quality-assurance/advanced-node-and-express/",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/slesarevns/ffc-advanced-node-and-express.git"
+  "dependencies": {
+    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "body-parser": "^1.19.0",
+    "mongodb": "^3.5.5",
+    "helmet": "^3.4.0",
+    "pug": "^0.1.0",
+    "passport": "^0.3.2",
+    "express-session": "^1.15.0",
+    "passport-local": "^2.0.4",
+    "passport-github": "^1.1.0",
+    "socket.io": "^2.3.0",
+    "passport.socketio": "^3.7.0",
+    "cookie-parser": "^1.4.5"
   },
   "keywords": [
     "node.js",
