@@ -3,6 +3,7 @@
 const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
 const fccTesting = require("./freeCodeCamp/fcctesting.js");
 const auth = require("./app/auth.js");
 const routes = require("./app/routes.js");
@@ -10,6 +11,7 @@ const mongo = require("mongodb").MongoClient;
 const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const app = express();
+dotenv.config();
 const http = require("http").Server(app);
 const sessionStore = new session.MemoryStore();
 
