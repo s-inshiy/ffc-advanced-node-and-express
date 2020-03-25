@@ -4,7 +4,7 @@
   "description": "https://www.freecodecamp.org/learn/information-security-and-quality-assurance/advanced-node-and-express/",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node_modules/.bin/nodemon server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -14,12 +14,13 @@
     "express": "^4.17.1",
     "express-session": "^1.15.0",
     "helmet": "^3.4.0",
-    "mongodb": "^3.5.5",
+    "mongodb": "^2.2.22",
+    "nodemon": "^2.0.2",
     "passport": "^0.3.2",
     "passport-github": "^1.1.0",
     "passport-local": "^1.0.0",
     "passport.socketio": "^3.7.0",
-    "pug": "^0.1.0",
+    "pug": "^2.0.4",
     "socket.io": "^2.3.0"
   },
   "keywords": [

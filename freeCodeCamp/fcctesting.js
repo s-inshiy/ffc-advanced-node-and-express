@@ -55,7 +55,6 @@ module.exports = function(app) {
     if (allowedOrigins.indexOf(origin) > -1) {
       res.setHeader("Access-Control-Allow-Origin", origin);
     }
-    //res.setHeader('Access-Control-Allow-Origin', 'https://pricey-hugger.gomix.me');
     res.setHeader("Access-Control-Allow-Credentials", true);
     next();
   });
