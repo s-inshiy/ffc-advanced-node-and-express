@@ -14,9 +14,9 @@ html
       p#num-users
       .chat-box
         ul#messages
-        form(action='')
+        form#form(action='')
           input#m(autocomplete='off')
-          button Send
+          button(type="submit") Send
       a#logout(href='/logout') Logout  
     script(src='https://code.jquery.com/jquery-2.2.1.min.js', integrity='sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js')
