@@ -43,8 +43,6 @@ mongo.connect(process.env.DATABASE, (err, db) => {
 
   http.listen(process.env.PORT || 3000);
 
-  //start socket.io code
-
   io.use(
     passportsocketio.authorize({
       cookieParser: cookieParser,
@@ -66,12 +64,17 @@ mongo.connect(process.env.DATABASE, (err, db) => {
       connected: true
     });
 
+    socket.on("chat message", message => {
+      io.emit("chat message", {
+        name: socket.request.user.name,
+        message
+      });
+    });
+
     socket.on("disconnect", () => {
-      console.log("user disconnected");
+      console.log("user " + socket.request.user.name + " disconnected");
       --currentUsers;
       io.emit("user count", currentUsers);
     });
   });
-
-  //end socket.io code
 });
