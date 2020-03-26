@@ -35,7 +35,6 @@ app.use(
   })
 );
 
-
 mongo.connect(process.env.DATABASE, (err, db) => {
   if (err) console.log("Database error: " + err);
 
@@ -61,12 +60,16 @@ mongo.connect(process.env.DATABASE, (err, db) => {
     console.log("user " + socket.request.user.name + " connected");
 
     ++currentUsers;
-    io.emit("user count", currentUsers);
+    io.emit("user", {
+      name: socket.request.user.name,
+      currentUsers,
+      connected: true
+    });
 
     socket.on("disconnect", () => {
       console.log("user disconnected");
       --currentUsers;
-      io.emit('user count', currentUsers);
+      io.emit("user count", currentUsers);
     });
   });
 
